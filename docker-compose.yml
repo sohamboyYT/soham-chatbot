@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: resolveai
+      POSTGRES_USER: resolveai
+      POSTGRES_PASSWORD: resolveai
+    ports:
+      - "5432:5432"
+    volumes:
+      - resolveai-data:/var/lib/postgresql/data
+  api:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://resolveai:resolveai@db:5432/resolveai
+      CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+volumes:
+  resolveai-data:
