@@ -3,6 +3,7 @@ services:
     name: soham-chatbot
     runtime: docker
     plan: free
+    branch: master
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     envVars:
