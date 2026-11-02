@@ -1,5 +1,7 @@
 # ResolveAI
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/sohamboyYT/soham-chatbot)
+
 ResolveAI is an AI-powered Tier-1 customer support workspace. It classifies incoming messages, extracts useful entities, scores sentiment, answers common questions, and escalates high-friction conversations to a human agent with a CRM-ready ticket.
 
 ## Included
